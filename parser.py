@@ -70,7 +70,4 @@ class Parser():
 
 
 if __name__ == '__main__':
-    prs = Parser('test_file.asm')
-    labels = prs.find_labels()
-    labels_with_codes = prs.find_code_under_labels(labels)
-    prs.find_mnemonics(labels_with_codes)
+    pass
