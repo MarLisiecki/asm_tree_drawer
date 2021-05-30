@@ -1,0 +1,131 @@
+[
+  {
+    "name": "JO",
+    "jump_style": "Jump if overflow"
+  },
+  {
+    "name": "JNO",
+    "jump_style": "Jump if not overflow"
+  },
+  {
+    "name": "JS",
+    "jump_style": "Jump if sign"
+  },
+  {
+    "name": "JNS",
+    "jump_style": "Jump if not sign"
+  },
+  {
+    "name": "JE",
+    "jump_style": "Jump if equal"
+  },
+  {
+    "name": "JZ",
+    "jump_style": "Jump if zero"
+  },
+  {
+    "name": "JNE",
+    "jump_style": "Jump if not equal"
+  },
+  {
+    "name": "JNZ",
+    "jump_style": "Jump if not zero"
+  },
+  {
+    "name": "JB",
+    "jump_style": "Jump if below"
+  },
+  {
+    "name": "JNAE",
+    "jump_style": "Jump if not above or equal"
+  },
+  {
+    "name": "JC",
+    "jump_style": "Jump if carry"
+  },
+  {
+    "name": "JNB",
+    "jump_style": "Jump if not below"
+  },
+  {
+    "name": "JAE",
+    "jump_style": "Jump if above or equal"
+  },
+  {
+    "name": "JNC",
+    "jump_style": "Jump if not carry"
+  },
+  {
+    "name": "JBE",
+    "jump_style": "Jump if below or equal"
+  },
+  {
+    "name": "JNA",
+    "jump_style": "Jump if not above"
+  },
+  {
+    "name": "JA",
+    "jump_style": "Jump if above"
+  },
+  {
+    "name": "JNBE",
+    "jump_style": "Jump if not below or equal"
+  },
+  {
+    "name": "JL",
+    "jump_style": "Jump if less"
+  },
+  {
+    "name": "JNGE",
+    "jump_style": "Jump if not greater or equal"
+  },
+  {
+    "name": "JGE",
+    "jump_style": "Jump if greater or equal"
+  },
+  {
+    "name": "JNL",
+    "jump_style": "Jump if not less"
+  },
+  {
+    "name": "JLE",
+    "jump_style": "Jump if less or equal"
+  },
+  {
+    "name": "JNG",
+    "jump_style": "Jump if not greater"
+  },
+  {
+    "name": "JG",
+    "jump_style": "Jump if greater"
+  },
+  {
+    "name": "JNLE",
+    "jump_style": "Jump if not less or equal"
+  },
+  {
+    "name": "JP",
+    "jump_style": "Jump if parity"
+  },
+  {
+    "name": "JPE",
+    "jump_style": "Jump if parity even"
+  },
+  {
+    "name": "JNP",
+    "jump_style": "Jump if not parity"
+  },
+  {
+    "name": "JPO",
+    "jump_style": "Jump if parity odd"
+  },
+  {
+    "name": "JCXZ",
+    "jump_style": "Jump if %CX register is 0"
+  },
+  {
+    "name": "JECXZ",
+    "jump_style": "Jump if %ECX register is 0"
+  }
+
+]
