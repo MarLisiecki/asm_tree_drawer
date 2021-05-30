@@ -1,9 +1,9 @@
 from dataclasses import dataclass
 
 
-@dataclass
+@dataclass(frozen=True)
 class Mnemonic:
-    def __init__(self, name: str, label: str, jump_type: str):
-        self.jump_type = jump_type
-        self.label = label
-        self.name = name
+        name: str
+        jump_type: str
+        label_name: str
+
