@@ -1,6 +1,8 @@
 import json
 import re
 
+from model import Mnemonic
+
 
 class Parser():
     def __init__(self, path_to_file: str):
@@ -44,6 +46,31 @@ class Parser():
         labels_with_code_dict = labels_dict.copy()
         return labels_with_code_dict
 
+    def create_mnemonics_list(self):
+        with open('mnemonics.json') as file:
+            data = file.read()
+            mnemonics = json.loads(data)
+            list_of_mnemonics = list()
+            for element in mnemonics:
+                list_of_mnemonics.append([element["name"].lower(), element['jump_type']])
+            return list_of_mnemonics
+
+    def find_mnemonics(self, labels_with_code_dict):
+        list_of_mnemonics = self.create_mnemonics_list()
+        list_of_mnemo_obj = list()
+        for key, value in labels_with_code_dict.items():
+            for mnemo in list_of_mnemonics:
+                if mnemo[0] in value:
+                    result_label = re.search(f'{mnemo[0]}(.*)\n', value)
+                    label = result_label.group().split()[1]
+                    list_of_mnemo_obj.append(Mnemonic(name = mnemo[0], jump_type = mnemo[1], target_label = label.replace('.', ''), root = key))
+        print(list_of_mnemo_obj)
+
+
+
 
 if __name__ == '__main__':
-    pass
+    prs = Parser('test_file.asm')
+    labels = prs.find_labels()
+    labels_with_codes = prs.find_code_under_labels(labels)
+    prs.find_mnemonics(labels_with_codes)
