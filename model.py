@@ -5,5 +5,6 @@ from dataclasses import dataclass
 class Mnemonic:
         name: str
         jump_type: str
-        label_name: str
+        target_label: str
+        root: str
 
