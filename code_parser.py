@@ -1,7 +1,7 @@
 import json
 import re
 
-from model import Mnemonic
+from models.model import Mnemonic
 
 
 class Parser():
@@ -85,7 +85,7 @@ class Parser():
 
     def find_mnemonics(self, labels_with_code_dict):
         """
-        Function which creates list of Mnemonics objects 
+        Function which creates list of Mnemonics objects
 
         :param labels_with_code_dict: Dictionary with labels and corresponding code
         :return: List of Mnemonic objects
