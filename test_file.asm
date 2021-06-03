@@ -10,7 +10,7 @@
 	jne	.L7
 	subl	$1, %esi
 	addq	%rdi, %rsi
-	jmp	.L3
+	jnp	.L3
 	.p2align 4,,10
 	.p2align 3
 .L4:
