@@ -83,6 +83,8 @@ class Parser():
                 list_of_mnemonics.append([element["name"].lower(), element['jump_type']])
             return list_of_mnemonics
 
+
+
     def find_mnemonics(self, labels_with_code_dict):
         """
         Function which creates list of Mnemonics objects
@@ -94,7 +96,8 @@ class Parser():
         list_of_mnemo_obj = list()
         for key, value in labels_with_code_dict.items():
             for mnemo in list_of_mnemonics:
-                if mnemo[0] in value:
+                if mnemo[0] in value.split():
+                    print(f'{mnemo[0]} == {value}')
                     result_label = re.search(f'{mnemo[0]}(.*)\n', value)
                     label = result_label.group().split()[1]
                     list_of_mnemo_obj.append(
@@ -103,4 +106,8 @@ class Parser():
 
 
 if __name__ == '__main__':
-    pass
+    prs = Parser('test_file.asm')
+    labels_dict = prs.find_labels()
+    labels_with_code_dict = prs.find_code_under_labels(labels_dict)
+    list_of_mnemo_obj = prs.find_mnemonics(labels_with_code_dict)
+    print(list_of_mnemo_obj)
