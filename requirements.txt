@@ -1,0 +1,5 @@
+graphviz==0.16
+Pillow==8.2.0
+screeninfo==0.6.7
+ttkthemes==3.2.2
+

@@ -1,7 +1,10 @@
 import json
 import re
-
 from models.model import Mnemonic
+
+# TODO:
+# > Normalize input text, not only labels name
+# > Extract class for regular expression's patterns
 
 
 class Parser():
@@ -75,7 +78,7 @@ class Parser():
 
         :return:
         """
-        with open('../const/mnemonics.json') as file:
+        with open('const/mnemonics.json') as file:
             data = file.read()
             mnemonics = json.loads(data)
             list_of_mnemonics = list()
@@ -103,9 +106,4 @@ class Parser():
 
 
 if __name__ == '__main__':
-    # prs = Parser('../test_file.asm')
-    # labels_dict = prs.find_labels()
-    # labels_with_code_dict = prs.find_code_under_labels(labels_dict)
-    # list_of_mnemo_obj = prs.find_mnemonics(labels_with_code_dict)
-    # print(list_of_mnemo_obj)
     pass
