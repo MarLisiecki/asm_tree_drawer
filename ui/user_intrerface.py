@@ -3,6 +3,7 @@ from tkinter import ttk
 from PIL import ImageTk, Image
 from ttkthemes import ThemedTk
 from screeninfo import get_monitors
+from tkinter import messagebox
 from tkinter.filedialog import askopenfilename
 from code_parser.code_parser import Parser
 from drawer.drawer import Drawer
@@ -69,6 +70,9 @@ class GUI:
 
         :return: None
         """
+        if (self.file_path == ''):
+            messagebox.showinfo(title='Select file', message='Select appropriate file')
+            return
         prs = Parser(self.file_path)
         labels_dict = prs.find_labels()
         labels_with_code_dict = prs.find_code_under_labels(labels_dict)
@@ -87,7 +91,11 @@ class GUI:
 
         :return: None
         """
-        self.graph.render('generated_pdf/Tree')
+        try:
+            self.graph.render('generated_pdf/Tree')
+            messagebox.showinfo(title='Save as PDF', message='Your file is in generated_pdf folder')
+        except AttributeError:
+            messagebox.showinfo(title='Save as PDF', message='You did not generate anything')
 
 
 # TODO: In future add SVG preview using PyQt
